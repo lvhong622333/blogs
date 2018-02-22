@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-4.3.xsd"
+	default-lazy-init="true">
+
+	<description>Shiro Configuration shiro登陆认证</description>
+
+	<!-- 加载配置属性文件 -->
+	<context:property-placeholder ignore-unresolvable="true" location="classpath:appconfig.properties" />
+
+    <!-- 定义安全认证类 -->
+	<bean id="myRealm" class="com.lvhong.shiro.AuthRealm" />
+	
+	<!-- 定义Shiro安全管理配置 -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<property name="realm" ref="myRealm" />
+	</bean>
+	
+	<!-- 安全认证过滤器 -->
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="filterChainDefinitions">
+			<value>
+				/static/** = anon
+				/bootstrap/**=anon
+				/=anon
+				/blogs/loginA=anon
+				/blogs/registerA=anon
+				/js/**=anon
+				/blogs/verificationCode=anon
+				/blogs/login=anon
+				/blogs/checkName=anon
+				/blogs/checkphone=anon
+				/blogs/register=anon
+				/** = authc
+			</value>
+		</property>
+		
+	</bean>
+
+	<!-- 将shiro的生命周期交由Spring管理 -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor" />
+		<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+
+</beans>

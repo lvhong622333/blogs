@@ -1,0 +1,13 @@
+com/lvhong/pojo/User.class
+com/lvhong/util/PropertiesUtil.class
+com/lvhong/util/VerificationCode.class
+com/lvhong/controller/LoginController.class
+com/lvhong/util/MD5Utils.class
+com/lvhong/dao/UserMapper.class
+com/lvhong/util/PropertyConfiger.class
+com/lvhong/controller/VerificationCodeController.class
+com/lvhong/shiro/AuthRealm.class
+com/lvhong/shiro/AuthCredential.class
+com/lvhong/controller/RegisterController.class
+com/lvhong/service/UserService.class
+com/lvhong/service/impl/UserServiceImpl.class

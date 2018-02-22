@@ -1,0 +1,13 @@
+/Users/lvhong/eclipse-workspace/blogs/src/main/java/com/lvhong/util/PropertiesUtil.java
+/Users/lvhong/eclipse-workspace/blogs/src/main/java/com/lvhong/pojo/User.java
+/Users/lvhong/eclipse-workspace/blogs/src/main/java/com/lvhong/dao/UserMapper.java
+/Users/lvhong/eclipse-workspace/blogs/src/main/java/com/lvhong/controller/RegisterController.java
+/Users/lvhong/eclipse-workspace/blogs/src/main/java/com/lvhong/controller/VerificationCodeController.java
+/Users/lvhong/eclipse-workspace/blogs/src/main/java/com/lvhong/controller/LoginController.java
+/Users/lvhong/eclipse-workspace/blogs/src/main/java/com/lvhong/util/PropertyConfiger.java
+/Users/lvhong/eclipse-workspace/blogs/src/main/java/com/lvhong/service/impl/UserServiceImpl.java
+/Users/lvhong/eclipse-workspace/blogs/src/main/java/com/lvhong/service/UserService.java
+/Users/lvhong/eclipse-workspace/blogs/src/main/java/com/lvhong/shiro/AuthRealm.java
+/Users/lvhong/eclipse-workspace/blogs/src/main/java/com/lvhong/shiro/AuthCredential.java
+/Users/lvhong/eclipse-workspace/blogs/src/main/java/com/lvhong/util/VerificationCode.java
+/Users/lvhong/eclipse-workspace/blogs/src/main/java/com/lvhong/util/MD5Utils.java
