@@ -16,7 +16,7 @@
 <title>登陆页面</title>
 </head>
 <body background="${pageContext.request.contextPath}/static/image/main2.jpg">
-	<form class="form-horizontal" role="form" action="${pageContext.request.contextPath}/blogs/login">
+	<form class="form-horizontal" role="form" action="${pageContext.request.contextPath}/blogs/login" method="post">
 		<div class="form-group">
 			<label for="name" class="col-md-2 control-label" style="color: white;">用户名</label>
 			<div class="col-md-4">

@@ -31,7 +31,7 @@
 <title>注册页面</title>
 </head>
 <body background="${pageContext.request.contextPath}/static/image/main2.jpg" onsubmit="return validate()">
-	<form class="form-horizontal" role="form" action="${pageContext.request.contextPath}/blogs/register" >
+	<form class="form-horizontal" role="form" action="${pageContext.request.contextPath}/blogs/register" method="post">
 		<div class="form-group">
 			<label for="name" class="col-md-2 control-label" style="color: white;">用户名</label>
 			<div class="col-md-4">
