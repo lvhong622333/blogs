@@ -89,6 +89,7 @@
 			<div class="col-md-offset-2 col-md-10">
 				<button type="submit" class="btn btn-default">注册</button>
 				<button type="reset" class="btn btn-default">重置</button>
+				<button type="button" class="btn btn-default" onclick="login()">登陆</button>
 			</div>
 		</div>
 	</form>
@@ -150,6 +151,9 @@
 				return false;
 			}
 			return true;
+		}
+		function login(){
+			window.location.href = "${pageContext.request.contextPath}/blogs/loginA";
 		}
 	</script>
 </body>

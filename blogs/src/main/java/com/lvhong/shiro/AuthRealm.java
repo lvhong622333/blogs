@@ -23,19 +23,7 @@ public class AuthRealm extends AuthorizingRealm{
 	 */
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-		//得到用户对象
-		//Subject subject = SecurityUtils.getSubject();
-		//String username = subject.getSession().getAttribute("username").toString();
-		//根据用户名查询角色信息 		
-		List<String> roleList = new ArrayList<String>();
-		roleList.add("货运管理");
-		roleList.add("基础信息");
-		roleList.add("系统管理");
-		//创建授权管理
-		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
-		//传入授权管理的集合信息
-		info.addStringPermissions(roleList);
-		return info;
+		return null;
 	}
     
 	/**
@@ -47,7 +35,7 @@ public class AuthRealm extends AuthorizingRealm{
 		UsernamePasswordToken loginToken =  (UsernamePasswordToken) token;
 		String username = loginToken.getUsername();
 	    User user = userService.queryUserByUserName(username);
-		AuthenticationInfo info = new SimpleAuthenticationInfo(user,user.getUserName(),this.getName());
+		AuthenticationInfo info = new SimpleAuthenticationInfo(user,user.getPassword(),getName());
 		return info;
 	}
 	

@@ -11,9 +11,11 @@
 	<!-- 加载配置属性文件 -->
 	<context:property-placeholder ignore-unresolvable="true" location="classpath:appconfig.properties" />
 
+	<bean id="credentialsMatcher" class="com.lvhong.shiro.AuthCredential" />
     <!-- 定义安全认证类 -->
-	<bean id="myRealm" class="com.lvhong.shiro.AuthRealm" />
-	
+	<bean id="myRealm" class="com.lvhong.shiro.AuthRealm" >
+		<property name="credentialsMatcher" ref="credentialsMatcher"></property>
+	</bean>
 	<!-- 定义Shiro安全管理配置 -->
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="realm" ref="myRealm" />

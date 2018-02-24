@@ -41,8 +41,21 @@
 			<div class="col-md-offset-2 col-md-10">
 				<button type="submit" class="btn btn-default">登录</button>
 				<button type="reset" class="btn btn-default">重置</button>
+				<button type="button" class="btn btn-default" onclick="register()">注册</button>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<font color="red">
+					${message}
+				</font>
 			</div>
 		</div>
 	</form>
 </body>
+<script type="text/javascript">
+	function register(){
+		window.location.href="${pageContext.request.contextPath}/blogs/registerA";
+	}
+</script>
 </html>

@@ -13,10 +13,9 @@ public class AuthCredential extends  SimpleCredentialsMatcher{
 	public boolean doCredentialsMatch(AuthenticationToken token, AuthenticationInfo info) {
 		//通过token 获取用户名和密码
 		UsernamePasswordToken userToken = (UsernamePasswordToken) token;
-		String username = userToken.getUsername();
-		String password = String.valueOf(userToken.getPassword());
-		String encryptPassword =  MD5Utils.encrypt(username, password, 3);
+		String encryptPassword =  MD5Utils.encrypt(userToken.getUsername(), String.valueOf(userToken.getPassword()), 3);
 		userToken.setPassword(encryptPassword.toCharArray());
 		return super.doCredentialsMatch(userToken, info);
 	}
+	
 }
