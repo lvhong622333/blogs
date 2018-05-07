@@ -68,14 +68,14 @@
 			</span>
 		</div>
 		<div class="div1">
-			<img alt="图片1" src="${pageContext.request.contextPath}/static/image/main1.jpg" class="img1"/>
-			<img alt="图片2" src="${pageContext.request.contextPath}/static/image/main2.jpg" class="img1 img2">
-			<img alt="图片3" src="${pageContext.request.contextPath}/static/image/main3.jpg" class="img1">
+			<img alt="图片1" src="${pageContext.request.contextPath}/static/image/main1.jpg" class="img1 img-circle"/>
+			<img alt="图片2" src="${pageContext.request.contextPath}/static/image/main2.jpg" class="img1 img2 img-circle">
+			<img alt="图片3" src="${pageContext.request.contextPath}/static/image/main3.jpg" class="img1 img-circle">
 		</div>
 		<div class="div1">
-			<img alt="图片4" src="${pageContext.request.contextPath}/static/image/main4.jpg" class="img1">
-			<img alt="图片6" src="${pageContext.request.contextPath}/static/image/main5.jpg" class="img1 img2">
-			<img alt="图片5" src="${pageContext.request.contextPath}/static/image/main6.jpg" class="img1">		
+			<img alt="图片4" src="${pageContext.request.contextPath}/static/image/main4.jpg" class="img1 img-circle">
+			<img alt="图片6" src="${pageContext.request.contextPath}/static/image/main5.jpg" class="img1 img2 img-circle">
+			<img alt="图片5" src="${pageContext.request.contextPath}/static/image/main6.jpg" class="img1 img-circle">		
 		</div>
 	</body>
 </html>

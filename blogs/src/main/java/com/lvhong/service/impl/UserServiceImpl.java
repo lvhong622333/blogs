@@ -2,6 +2,7 @@ package com.lvhong.service.impl;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 import javax.annotation.Resource;
 
@@ -29,6 +30,14 @@ public class UserServiceImpl implements UserService {
 
 	public User findUserByphone(Map<String, String> map) {
 		return userMapper.findUserByPhone(map);
+	}
+
+	public Set<String> findRolesByUserName(String userName) {
+		return userMapper.findRolesByUserName(userName);
+	}
+
+	public Set<String> findPermissionsByUserName(String userName) {
+		return userMapper.findPermissionsByUserName(userName);
 	}
 
 	

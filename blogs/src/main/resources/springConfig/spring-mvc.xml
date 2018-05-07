@@ -55,5 +55,9 @@
             </bean>
         </mvc:message-converters>
     </mvc:annotation-driven>
-	
+ 	<!-- 为了shiro以注解的方式实现权限的管理 -->
+	<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"/>
+	    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
 </beans>

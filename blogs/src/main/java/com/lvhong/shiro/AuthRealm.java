@@ -1,7 +1,6 @@
 package com.lvhong.shiro;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Set;
 import javax.annotation.Resource;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -23,7 +22,14 @@ public class AuthRealm extends AuthorizingRealm{
 	 */
 	@Override
 	protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-		return null;
+		User user = (User) principals.getPrimaryPrincipal();
+		//根据用户名查询角色和权限信息
+		Set<String> roles = userService.findRolesByUserName(user.getUserName());
+		Set<String> permissions = userService.findPermissionsByUserName(user.getUserName());
+		SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+		info.setRoles(roles);
+		info.setStringPermissions(permissions);
+		return info;
 	}
     
 	/**

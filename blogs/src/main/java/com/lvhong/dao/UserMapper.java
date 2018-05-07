@@ -1,6 +1,7 @@
 package com.lvhong.dao;
 
 import java.util.Map;
+import java.util.Set;
 
 import com.lvhong.pojo.User;
 
@@ -18,5 +19,9 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
 	User findUserByPhone(Map<String, String> map);
+
+	Set<String> findRolesByUserName(String userName);
+
+	Set<String> findPermissionsByUserName(String userName);
 
 }

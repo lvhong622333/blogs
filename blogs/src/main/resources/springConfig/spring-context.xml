@@ -86,6 +86,9 @@
 		<!-- 配置监控统计拦截的filters -->
 		<property name="filters" value="stat" />
 	</bean>
+	<!-- <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+    		<property name="jndiName" value="java:comp/env/jdbc/blogs"/>
+	</bean> -->
 	
 	<bean id="propertyConfiger" class="com.lvhong.util.PropertyConfiger">
 	   <property name="ignoreUnresolvablePlaceholders" value="true"/>
