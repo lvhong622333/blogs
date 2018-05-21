@@ -30,7 +30,6 @@
 				/blogs/checkName=anon
 				/blogs/checkphone=anon
 				/blogs/register=anon
-				/blogs/testDemo=rolesFilter["admin2","admin1"]
 				/** = authc
 			</value>
 		</property>
@@ -45,7 +44,7 @@
 		<property name="realm" ref="myRealm" />
 		<!-- 配置缓存管理器，减轻系统服务端压力 -->
 		<property name="cacheManager" ref="shiroCacheManager" />
-		<property name="rememberMeManager" ref="cookieRemberMeManager"></property>
+		<property name="rememberMeManager" ref="cookieRemberMeManager" />
 	</bean>
     <!-- 定义安全认证类 -->
 	<bean id="myRealm" class="com.lvhong.shiro.AuthRealm" >
@@ -65,6 +64,6 @@
 	</bean>
 	<bean class="org.apache.shiro.web.servlet.SimpleCookie" id="cookie">
 		<constructor-arg value="rememberMe"></constructor-arg>
-		<property name="maxAge" value="200"></property>
+		<property name="maxAge" value="2000000"></property>
 	</bean>
 </beans>

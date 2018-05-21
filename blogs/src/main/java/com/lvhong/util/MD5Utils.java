@@ -11,6 +11,6 @@ public class MD5Utils {
 	 * @return String
 	 */
 	public static String encrypt(String username , String password , Integer frequency) {
-		 return new Md5Hash(password, username, frequency).toString();
+		 return new Md5Hash(password, username, frequency).toHex();
 	}
 }

@@ -4,7 +4,6 @@ import org.apache.shiro.authc.AuthenticationInfo;
 import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authc.credential.SimpleCredentialsMatcher;
-
 import com.lvhong.util.MD5Utils;
 
 public class AuthCredential extends  SimpleCredentialsMatcher{
@@ -17,5 +16,4 @@ public class AuthCredential extends  SimpleCredentialsMatcher{
 		userToken.setPassword(encryptPassword.toCharArray());
 		return super.doCredentialsMatch(userToken, info);
 	}
-	
 }

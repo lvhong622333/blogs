@@ -4,17 +4,12 @@ import javax.annotation.Resource;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.lvhong.pojo.User;
 import com.lvhong.service.UserService;
-import com.lvhong.util.MD5Utils;
 
 @Controller
 @RequestMapping("/blogs")
@@ -44,6 +39,8 @@ public class LoginController {
 			UsernamePasswordToken token = new UsernamePasswordToken(userName, password);
 			if("1".equals(rememberMe)) {			
 				token.setRememberMe(true);
+			}else {
+				token.setRememberMe(false);
 			}
 			try {
 				subject.login(token);		
@@ -56,11 +53,5 @@ public class LoginController {
 		User user = userService.queryUserByUserName(userName);
 		subject.getSession().setAttribute("user", user);
 		return "/views/pages/homePage";
-	}
-	
-	@RequestMapping("/testDemo")
-	@ResponseBody
-	public String testDemo() {
-		return "恭喜你自定义权限过滤器成功";
 	}
 }
