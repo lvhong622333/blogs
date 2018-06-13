@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.lvhong.pojo.User;
+import com.lvhong.service.DubboService;
+import com.lvhong.service.DubboService2;
 import com.lvhong.service.UserService;
 
 @Controller
@@ -18,6 +20,9 @@ public class LoginController {
 	@Resource
 	UserService userService;
 	
+	@Resource
+	DubboService2 dubboService;
+	
 	@RequestMapping("/loginA")
 	public String login() {
 		return "/login";
@@ -25,6 +30,8 @@ public class LoginController {
 	
 	@RequestMapping("/login")
 	public String login(String userName ,String password,String rememberMe,Model model) {
+		String sayHelloWorld = dubboService.sayHelloWorld();
+		System.out.println(sayHelloWorld);
 		if(userName == null || "".equals(userName)) {
 			model.addAttribute("message", "用户名不能为空！");
             return "/login";

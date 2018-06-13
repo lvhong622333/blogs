@@ -2,33 +2,31 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lvhong.dao.UserMapper">
   <resultMap id="BaseResultMap" type="com.lvhong.pojo.User">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="user_name" jdbcType="VARCHAR" property="userName" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="telephone" jdbcType="VARCHAR" property="telephone" />
-    <result column="e_mail" jdbcType="VARCHAR" property="eMail" />
-    <result column="row_version" jdbcType="VARCHAR" property="rowVersion" />
-    <result column="isvalid" jdbcType="VARCHAR" property="isvalid" />
-    <result column="create_date" jdbcType="DATE" property="createDate" />
-    <result column="update_date" jdbcType="DATE" property="updateDate" />
+    <id column="ID" jdbcType="INTEGER" property="id" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
+    <result column="TELEPHONE" jdbcType="VARCHAR" property="telephone" />
+    <result column="E_MAIL" jdbcType="VARCHAR" property="eMail" />
+    <result column="ROW_VERSION" jdbcType="VARCHAR" property="rowVersion" />
+    <result column="ISVALID" jdbcType="VARCHAR" property="isvalid" />
+    <result column="CREATE_DATE" jdbcType="DATE" property="createDate" />
+    <result column="UPDATE_DATE" jdbcType="DATE" property="updateDate" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, user_name, password, telephone, e_mail, row_version, isvalid, create_date, update_date
+    ID, USER_NAME, PASSWORD, TELEPHONE, E_MAIL, ROW_VERSION, ISVALID, CREATE_DATE, UPDATE_DATE
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from USER
-    where id = #{id,jdbcType=INTEGER}
+    from TM_USER
+    where ID = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from USER
-    where id = #{id,jdbcType=INTEGER}
+    delete from TM_USER
+    where ID = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.lvhong.pojo.User">
-    insert into USER (id, user_name, password, 
-      telephone, e_mail, row_version, 
-      isvalid, create_date, update_date
+    insert into TM_USER (ID, USER_NAME, PASSWORD, TELEPHONE, E_MAIL, ROW_VERSION, ISVALID, CREATE_DATE, UPDATE_DATE
       )
     values (#{id,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{telephone,jdbcType=VARCHAR}, #{eMail,jdbcType=VARCHAR}, #{rowVersion,jdbcType=VARCHAR}, 
@@ -36,34 +34,34 @@
       )
   </insert>
   <insert id="insertSelective" parameterType="com.lvhong.pojo.User">
-    insert into USER
+    insert into TM_USER
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
-        id,
+        ID,
       </if>
       <if test="userName != null">
-        user_name,
+        USER_NAME,
       </if>
       <if test="password != null">
-        password,
+        PASSWORD,
       </if>
       <if test="telephone != null">
-        telephone,
+        TELEPHONE,
       </if>
       <if test="eMail != null">
-        e_mail,
+        E_MAIL,
       </if>
       <if test="rowVersion != null">
-        row_version,
+        ROW_VERSION,
       </if>
       <if test="isvalid != null">
-        isvalid,
+        ISVALID,
       </if>
       <if test="createDate != null">
-        create_date,
+        CREATE_DATE,
       </if>
       <if test="updateDate != null">
-        update_date,
+        UPDATE_DATE,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -97,63 +95,63 @@
     </trim>
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.lvhong.pojo.User">
-    update USER
+    update TM_USER
     <set>
       <if test="userName != null">
-        user_name = #{userName,jdbcType=VARCHAR},
+        USER_NAME = #{userName,jdbcType=VARCHAR},
       </if>
       <if test="password != null">
-        password = #{password,jdbcType=VARCHAR},
+        PASSWORD = #{password,jdbcType=VARCHAR},
       </if>
       <if test="telephone != null">
-        telephone = #{telephone,jdbcType=VARCHAR},
+        TELEPHONE = #{telephone,jdbcType=VARCHAR},
       </if>
       <if test="eMail != null">
-        e_mail = #{eMail,jdbcType=VARCHAR},
+        E_MAIL = #{eMail,jdbcType=VARCHAR},
       </if>
       <if test="rowVersion != null">
-        row_version = #{rowVersion,jdbcType=VARCHAR},
+        ROW_VERSION = #{rowVersion,jdbcType=VARCHAR},
       </if>
       <if test="isvalid != null">
-        isvalid = #{isvalid,jdbcType=VARCHAR},
+        ISVALID = #{isvalid,jdbcType=VARCHAR},
       </if>
       <if test="createDate != null">
-        create_date = #{createDate,jdbcType=DATE},
+        CREATE_DATE = #{createDate,jdbcType=DATE},
       </if>
       <if test="updateDate != null">
-        update_date = #{updateDate,jdbcType=DATE},
+        UPDATE_DATE = #{updateDate,jdbcType=DATE},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.lvhong.pojo.User">
-    update USER
-    set user_name = #{userName,jdbcType=VARCHAR},
-      password = #{password,jdbcType=VARCHAR},
-      telephone = #{telephone,jdbcType=VARCHAR},
-      e_mail = #{eMail,jdbcType=VARCHAR},
-      row_version = #{rowVersion,jdbcType=VARCHAR},
-      isvalid = #{isvalid,jdbcType=VARCHAR},
-      create_date = #{createDate,jdbcType=DATE},
-      update_date = #{updateDate,jdbcType=DATE}
-    where id = #{id,jdbcType=INTEGER}
+    update TM_USER
+    set USER_NAME = #{userName,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      TELEPHONE = #{telephone,jdbcType=VARCHAR},
+      E_MAIL = #{eMail,jdbcType=VARCHAR},
+      ROW_VERSION = #{rowVersion,jdbcType=VARCHAR},
+      ISVALID = #{isvalid,jdbcType=VARCHAR},
+      CREATE_DATE = #{createDate,jdbcType=DATE},
+      UPDATE_DATE = #{updateDate,jdbcType=DATE}
+    where ID = #{id,jdbcType=INTEGER}
   </update>
   <select id="findUserByPhone" parameterType="java.util.Map" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
-    from USER
-    where (isvalid = 1 or isvalid is null)
+    from TM_USER
+    where (ISVALID = 1 or ISVALID is null)
     <if test="telephone != null">    
-    		and telephone = #{telephone,jdbcType=VARCHAR}
+    		and TELEPHONE = #{telephone,jdbcType=VARCHAR}
     </if>
     <if test="name != null">
-    		and user_name = #{name,jdbcType=VARCHAR}
+    		and USER_NAME = #{name,jdbcType=VARCHAR}
     </if>
   </select>
   <select id="findRolesByUserName" parameterType="java.lang.String" resultType="java.lang.String">
-    select role.role_name from USER_ROLES role , USER user where role.user_id = user.id and user.user_name = #{userName,jdbcType=VARCHAR}
+    select role.ROLE_NAME from TM_ROLES role , TM_USER user , TM_SYS_USER_ROLE userRole where userRole.USER_ID = user.ID and role.ID = userRole.ROLE_ID and user.USER_NAME = #{userName,jdbcType=VARCHAR}
   </select>
   <select id="findPermissionsByUserName" parameterType="java.lang.String" resultType="java.lang.String">
-    select permission.permission_name from USER_ROLES role , USER user , ROLE_PERMISSIONS permission where role.user_id = user.id and role.id = permission.role_id and user.user_name = #{userName,jdbcType=VARCHAR}
+    select permission.PERMISSION_NAME from TM_USER user , TM_PERMISSIONS permission , TM_SYS_USER_ROLE userRole , TM_SYS_ROLE_PERMISSION rolePermission where userRole.USER_ID = user.ID and userRole.ROLE_ID = rolePermission.ROLE_ID  and rolePermission.PERMISSION_ID = permission.ID and user.user_name = #{userName,jdbcType=VARCHAR}
   </select>
 </mapper>

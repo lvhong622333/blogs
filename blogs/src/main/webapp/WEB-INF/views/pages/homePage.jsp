@@ -14,7 +14,6 @@
 	<frameset cols="200,*">
 	  <frame src="${pageContext.request.contextPath}/catalog/page_dir">
 	  <frameset rows="400,*">
-	  	 <frame src="http://www.baidu.com" name="frame_name_new">
 	  	 <frame src="${pageContext.request.contextPath}/catalog/frame_name" name="frame_name">
 	  </frameset>
 	</frameset>
