@@ -16,9 +16,7 @@
 		ignore-unresolvable="true" location="classpath:appconfig.properties" />
 	
 	<!-- dubbo分布式框架配置文件开始 -->
-		<dubbo:consumer check="false" />
-		<dubbo:application name="demo-consumer"/>
 		<dubbo:registry address="zookeeper://106.14.179.140:2181"/>
-		<dubbo:reference interface="com.lvhong.service.DubboService2" id="dubboService2" timeout="1200000"/>
+		<dubbo:reference interface="com.lvhong.service.DubboService2" id="dubboService2" timeout="1200000" check="false"/>
 	<!-- dubbo分布式框架配置文件结束 -->
 </beans>

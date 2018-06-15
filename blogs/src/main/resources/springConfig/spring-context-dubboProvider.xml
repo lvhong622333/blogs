@@ -20,5 +20,4 @@
 		<dubbo:protocol name="dubbo" port="20880"/>
 		<dubbo:service interface="com.lvhong.service.DubboService" ref="dubboService" />
 	<!-- dubbo分布式框架配置文件结束 -->
-		<bean class="com.lvhong.service.impl.DubboServiceImpl" id="dubboService"></bean>
 </beans>

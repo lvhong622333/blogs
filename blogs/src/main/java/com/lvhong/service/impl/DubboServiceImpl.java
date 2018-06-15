@@ -1,7 +1,10 @@
 package com.lvhong.service.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.lvhong.service.DubboService;
 
+@Service("dubboService")
 public class DubboServiceImpl implements DubboService {
 	
 	public String sayHelloWorld() {
